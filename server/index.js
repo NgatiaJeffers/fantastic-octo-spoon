@@ -8,14 +8,13 @@ import postRoutes from './routes/posts.js';
 // Initialize the app
 const app = express();
 
+app.use(bodyParser.json({ limit: '30mb', extended: true }));
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 // Pass in the headers
 app.use(cors());
 
 // Get all routes from the routes folder
 app.use('/posts', postRoutes);
-
-app.use(bodyParser.json({ limit: '30mb', extended: true }));
-app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
 const CONNECTION_URL = 'mongodb+srv://JeffDev:JeffDev123@cluster0.ui7ms.mongodb.net/?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
