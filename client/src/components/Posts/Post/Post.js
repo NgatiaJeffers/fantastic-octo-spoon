@@ -12,9 +12,7 @@ const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
 
     let editPost = () => {
-        console.log("I was Clicked!")
        setCurrentId(post._id)
-       console.log(setCurrentId(post._id))
     }
     
     return (

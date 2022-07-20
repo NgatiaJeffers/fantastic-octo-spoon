@@ -13,7 +13,6 @@ const App = () => {
     const [currentId, setCurrentId] = useState(null); // 📡 setState on ID to pass on the form component
     const classes = useStyles();
     const dispatch = useDispatch();
-    console.log("Current ID: ", currentId)
 
     useEffect(() => {
         dispatch(getPosts());

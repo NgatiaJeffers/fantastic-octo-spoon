@@ -19,14 +19,11 @@ const Form = ({ currentId, setCurrentId }) => {
     // TODO:Fix issue on redux upate state
     const post = useSelector((state) => (!!currentId ? state.posts.find(item => item._id === currentId) : null));
     const posts = useSelector((state) => state.posts)
-    console.log(posts)
-    console.log(currentId)
     const classes = useStyles();
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (post) setPostData(post);
-        console.log("Post", post)
     }, [post])
 
     const handleSubmit = (e) => {
