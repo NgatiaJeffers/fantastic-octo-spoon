@@ -13,6 +13,7 @@ const App = () => {
     const [currentId, setCurrentId] = useState(null); // 📡 setState on ID to pass on the form component
     const classes = useStyles();
     const dispatch = useDispatch();
+    console.log("Current ID: ", currentId)
 
     useEffect(() => {
         dispatch(getPosts());
@@ -31,7 +32,7 @@ const App = () => {
                             <Posts  setCurrentId={setCurrentId}/>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Form current={currentId} setCurrentId={setCurrentId}/>
+                            <Form currentId={currentId} setCurrentId={setCurrentId}/>
                         </Grid>
                     </Grid>
                 </Container>

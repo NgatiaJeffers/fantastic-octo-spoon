@@ -16,7 +16,11 @@ const Form = ({ currentId, setCurrentId }) => {
         selectedFile: ""
     });
     // 🤞 Fetch post with the current ID (only post)
-    const post = useSelector((state) => (currentId ? state.posts.find(item => item._id === currentId) : null));
+    // TODO:Fix issue on redux upate state
+    const post = useSelector((state) => (!!currentId ? state.posts.find(item => item._id === currentId) : null));
+    const posts = useSelector((state) => state.posts)
+    console.log(posts)
+    console.log(currentId)
     const classes = useStyles();
     const dispatch = useDispatch();
 
