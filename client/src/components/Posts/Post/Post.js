@@ -10,6 +10,12 @@ import useStyles from './styles';
 
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
+
+    let editPost = () => {
+        console.log("I was Clicked!")
+       setCurrentId(post._id)
+       console.log(setCurrentId(post._id))
+    }
     
     return (
         <Card className={classes.card}>
@@ -19,7 +25,7 @@ const Post = ({ post, setCurrentId }) => {
                 <Typography variant='body2'>{moment(post.createdAt).fromNow()}</Typography>
             </div>
             <div className={classes.overlay2}>
-                <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
+                <Button style={{color: 'white'}} size="small" onClick={editPost}>
                     <MoreHorizonIcon fontSize="medium" />
                 </Button>
             </div>
